@@ -10,3 +10,4 @@ select
 FROM {{ ref('tb_sku_silver') }} AS silver
 LEFT JOIN {{ ref('depara_sku') }} AS depara_sku
 ON silver.sku = depara_sku.sku
+WHERE silver.SKU_COD IS NOT NULL
