@@ -2,7 +2,6 @@
 logs/
 .vscode/
 # Ignore dbt artifacts
-main/target/
 # Ignore dbt packages
 main/dbt_packages/
 # Ignore dbt logs

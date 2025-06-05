@@ -34,8 +34,9 @@ quote-style = 'single'
 
 [tool.taskipy.tasks]
 prepare = "dbt clean && dbt compile --profiles-dir ."
+deps = "poetry run task prepare && dbt deps --profiles-dir ."
 seed = "poetry run task prepare && dbt seed --profiles-dir ."
-run = "poetry run task prepare && dbt run --profiles-dir ."
+run = "poetry run task prepare && poetry run task deps && poetry run task seed && dbt run --profiles-dir ."
 test = "poetry run task prepare && dbt test --profiles-dir ."
 snapshot = "poetry run task prepare && dbt snapshot --profiles-dir ."
 build = "poetry run task prepare && dbt build --profiles-dir ."
