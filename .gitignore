@@ -1,0 +1,17 @@
+
+logs/
+.vscode/
+# Ignore dbt artifacts
+main/target/
+# Ignore dbt packages
+main/dbt_packages/
+# Ignore dbt logs
+main/logs/
+# Ignore Python cache files
+__pycache__/
+# Ignore Python virtual environment
+venv/
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+# Ignore local environment variables
+*.env

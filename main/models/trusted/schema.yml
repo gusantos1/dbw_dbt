@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: tb_sku_silver
+    description: "The silver model"
+    columns:
+      - name: SKU
+        description: "Nome do sku"
+        # tests:
+        #   - not_null
+
+      - name: VALOR
+        description: "Valor bruto do sku"
+        # tests:
+        #   - test_less_than:
+        #       value: 10
+
+      - name: TIPO
+        description: "Tipo do sku"
+        # tests:
+        #   - accepted_values:
+        #       values: ['A', 'B', 'C', 'E', 'F', 'G', 'H', 'I', 'J', 'K']
+        #       quote: true

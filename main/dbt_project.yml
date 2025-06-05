@@ -1,0 +1,33 @@
+name: 'main'
+version: '1.0.0'
+config-version: 2
+
+profile: 'main'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  main:
+    trusted:
+      +materialized: view
+      +schema: silver
+      +alias: 'tb_sku_silver'
+    
+    refined:
+      +materialized: table
+      +schema: gold
+      +alias: 'tb_sku_gold'
+
+seeds:
+  main:
+    +schema: silver

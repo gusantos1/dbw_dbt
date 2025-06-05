@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: tb_sku_gold
+    description: "The gold model"
+    columns:
+      - name: SKU_COD
+        description: "Código do sku"
+        # tests:
+        #   - not_null
+
+      - name: SKU_NAME
+        description: "Nome do sku"
+
+      - name: VALOR
+        description: "Valor bruto do sku"
+      
+      - name: TIPO
+        description: "Tipo do sku"
