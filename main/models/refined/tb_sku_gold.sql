@@ -1,3 +1,7 @@
+{{ config(
+    unique_key='SKU_COD'
+)}}
+
 select
     silver.sku AS SKU_COD,
     depara_sku.sku AS SKU_NAME,

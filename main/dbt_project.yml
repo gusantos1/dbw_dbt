@@ -24,10 +24,13 @@ models:
       +alias: 'tb_sku_silver'
     
     refined:
-      +materialized: table
+      +materialized: incremental
       +schema: gold
       +alias: 'tb_sku_gold'
 
 seeds:
   main:
     +schema: silver
+
+flags:
+  use_materialization_v2: true
