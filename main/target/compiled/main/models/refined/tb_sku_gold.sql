@@ -1,6 +1,4 @@
-{{ config(
-    unique_key='SKU_COD'
-)}}
+
 
 select
     DISTINCT
@@ -8,7 +6,7 @@ select
     depara_sku.sku AS SKU_NAME,
     silver.valor,
     silver.tipo
-FROM {{ ref('tb_sku_silver') }} AS silver
-LEFT JOIN {{ ref('depara_sku') }} AS depara_sku
+FROM `dbw_eastus`.`silver`.`tb_sku_silver` AS silver
+LEFT JOIN `dbw_eastus`.`silver`.`depara_sku` AS depara_sku
 ON silver.sku = depara_sku.sku
 WHERE silver.sku IS NOT NULL
