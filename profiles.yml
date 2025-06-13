@@ -1,7 +1,7 @@
 main:
-  target: databricks
+  target: dbw_prod #Ambiente de produção
   outputs:
-    databricks: # Documentado em: https://docs.getdbt.com/docs/core/connect-data-platform/databricks-setup
+    dbw_prod: # Documentado em: https://docs.getdbt.com/docs/core/connect-data-platform/databricks-setup
       catalog: dbw_eastus
       schema: bronze
       host: "{{ env_var('DATABRICKS_HOST') }}"
