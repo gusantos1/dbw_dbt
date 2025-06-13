@@ -3,7 +3,7 @@ Data Build Tool é um framework de processamento de dados baseado em ANSI SQL co
 O dbt não é ferramenta para copia ou orquestração de dados como Airflow ou Data Factory.
 O dbt não é serviço de processamento, pelo contrário, o dbt se utiliza de um serviço de processamento para motor das transformações, com Databricks, o dbt pode utilizar um SQL Warehouse como poder de processamento para seus trabalhos.
 
-![](https://github.com/gusantos1/dbw_dbt/blob/main/workflow-dbt.png?raw=true)
+<img src="https://github.com/gusantos1/dbw_dbt/blob/main/workflow-dbt.png">
 
 #### 1. Instalação do Pipx
 
