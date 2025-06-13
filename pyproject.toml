@@ -1,9 +1,9 @@
 [project]
-name = "hdp-dbt"
+name = "dbt"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Guilherme",email = "gusantos.ok@gmail.com"}
+    {name = "Guilherme", email = "gusantos.ok@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12,<4.0"
@@ -12,34 +12,21 @@ dependencies = [
     "dbt-core (>=1.9.6,<2.0.0)",
 ]
 
-
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.11.12"
 taskipy = "^1.14.1"
 
-[tool.ruff]
-line-length = 79
-
-[tool.ruff.lint]
-preview = true
-select = ['I', 'F', 'E', 'W', 'PL' , 'PT']
-
-[tool.ruff.format]
-preview = true
-quote-style = 'single'
-
 [tool.taskipy.tasks]
-prepare = "dbt clean && dbt compile --profiles-dir ."
-deps = "poetry run task prepare && dbt deps --profiles-dir ."
-seed = "poetry run task prepare && dbt seed --profiles-dir ."
-run = "poetry run task prepare && poetry run task deps && poetry run task seed && dbt run --profiles-dir ."
-test = "poetry run task prepare && dbt test --profiles-dir ."
-snapshot = "poetry run task prepare && dbt snapshot --profiles-dir ."
-build = "poetry run task prepare && dbt build --profiles-dir ."
-pre_doc = "poetry run task prepare && dbt docs generate --profiles-dir ."
-doc = "poetry run dbt docs serve --port 8080 --profiles-dir ."
-post_build = "echo '✅ Build finalizado com sucesso 🚀'"
+pre_doc = "dbt docs generate"
+pre_build = "task pre_doc"
+clean = "dbt clean && dbt compile"
+build = "dbt build"
+deps = "dbt deps"
+doc = "dbt docs serve --port 8080"
+run = "dbt run"
+snapshot = "dbt snapshot"
+seed = "dbt seed"
+test = "dbt test"
