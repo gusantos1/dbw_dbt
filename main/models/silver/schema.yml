@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: tb_sku_silver
+    description: "Dados tratados de SKUs"
+    columns:
+      - name: SKU
+        tests:
+          - not_null
+
+      - name: VALOR
+        tests:
+          - test_less_than: # Macro para verificar se o valor é menor que 10
+              value: 10
+
+      - name: TIPO
+        tests:
+          - dbt_utils.not_accepted_values:
+              values: ['-', 'N/A', 'null']

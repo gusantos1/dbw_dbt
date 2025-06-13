@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: tb_sku_bronze
+    description: "Dados brutos de SKUs"
+    columns:
+      - name: SKU
+        description: "Nome do sku"
+
+      - name: VALOR
+        description: "Valor bruto do sku"
+
+      - name: TIPO
+        description: "Tipo do sku"
+        

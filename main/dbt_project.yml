@@ -2,7 +2,7 @@ name: 'main'
 version: '1.0.0'
 config-version: 2
 
-profile: 'main'
+profile: 'main' # Correspondente a chave em profiles.yml
 
 model-paths: ["models"]
 seed-paths: ["seeds"]
@@ -18,19 +18,25 @@ clean-targets:
 
 models:
   main:
-    trusted:
-      +materialized: view
+    bronze:
+      +materialized: incremental
+      +schema: bronze
+      +alias: 'tb_sku_bronze'
+
+    silver:
+      +materialized: table
       +schema: silver
       +alias: 'tb_sku_silver'
     
-    refined:
-      +materialized: incremental
+    gold:
+      +materialized: view
       +schema: gold
       +alias: 'tb_sku_gold'
 
 seeds:
   main:
     +schema: silver
+    +alias: 'tb_sku_seed'
 
 flags:
-  use_materialization_v2: true
+  use_materialization_v2: true #Necessário para o incremental

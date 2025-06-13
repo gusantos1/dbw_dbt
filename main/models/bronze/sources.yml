@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: neon_federation_dbw
+    description: Fonte de dados do Neon serveless Federado no Databricks
+    catalog: psql_neon
+    schema: raw
+    tables:
+      - name: tb_sku
+        description: Tabela de SKUs
+        identifier: tb_sku

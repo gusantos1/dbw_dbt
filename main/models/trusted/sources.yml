@@ -1,8 +1,0 @@
-version: 2
-
-sources:
-  - name: dbw_eastus
-    catalog: dbw_eastus
-    schema: bronze
-    tables:
-      - name: tb_sku

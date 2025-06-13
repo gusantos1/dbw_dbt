@@ -1,0 +1,21 @@
+
+    
+    
+    
+    create or replace table `dbw_eastus`.`silver`.`tb_sku_seed` (`sku` string ,`campanha` string )
+    
+  using delta
+    
+    
+    
+    
+    
+  ;
+    -- dbt seed --
+    
+          insert overwrite `dbw_eastus`.`silver`.`tb_sku_seed` values
+          (%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s)
+      
+
+;
+  

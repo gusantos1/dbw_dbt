@@ -2,5 +2,5 @@
     select
         *
     from {{ model }}
-    where {{ column_name }} < {{ value }}
+    where {{ column_name }} > {{ value }}
 {% endtest %}
