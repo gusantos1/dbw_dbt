@@ -5,17 +5,13 @@ with source_data as (
         DISTINCT
         sku,
         valor,
-        coalesce(replace(TIPO, '-'), '') tipo,
+        tipo,
         ingestion_timestamp
     from `dbw_eastus`.`bronze`.`tb_sku_bronze`
 
 )
 select 
     *,
-    
-            
-    (case when sku is null then 1 else 0 end)
- as sku_has_null, 
     
             
     (case when valor is null then 1 else 0 end)
