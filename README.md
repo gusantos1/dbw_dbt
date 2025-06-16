@@ -216,7 +216,7 @@ Se estiver usando Poetry no ambiente de desenvolvimento, certifique-se de seleci
 
 #### 11. Servindo a documentação com Azure Static Web Apps
 > Durante a implementação o GH Actions cria um fluxo de CI/CD para atualização dos dados estáticos a cada push na branch do projeto.
-<u><b>CI/CD gerado</b></u>: https://github.com/gusantos1/dbw_dbt/blob/main/.github/workflows/azure-static-web-apps-gentle-pebble-0b9f95b10.yml
+<u><b>CI/CD gerado</b></u>: https://github.com/gusantos1/dbw_dbt/blob/main/.github/workflows/azure-static-web-apps-gentle-pebble-0b9f95b10.yml<br>
 <u><b>Deploy da documentação</b></u>: https://gentle-pebble-0b9f95b10.6.azurestaticapps.net/#!/overview
 - Predefinições de Build: `Custom (detectado)`
 - Local do aplicativo(raiz do aplicativo de documentação dbt): `./main/target`
