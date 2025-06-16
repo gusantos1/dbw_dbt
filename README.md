@@ -107,7 +107,7 @@ test = "dbt test"
 ---
 #### 7. Mínimo de configuração para o arquivo **profiles.yml**
 > Por padrão o arquivo **profiles.yml** está localizado em **/~/.dbt/profiles.yml**, mas você pode alterar para que o arquivo faça parte da raiz do projeto.
-<u><b>Documentado</b>: https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles</u>
+<u><b>Documentado</b>: https://docs.getdbt.com/docs/core/connect-data-platform/connection-profiles</u><br>
 <u><b>Exemplo</b>: https://github.com/gusantos1/dbw_dbt/blob/main/profiles.yml</u>
 
 Em **profiles.yml**:
@@ -131,7 +131,7 @@ outputs:
 
 ---
 #### 8. Arquivo para não concatenar o nome dos schemas
-> Por padrão o dbt reconhece o nome dos schemas através dos arquivos .sql da pasta **models** (rdefinir aqui reescreve os demais), em **db_project.yml** e **profiles.yml** (sendo esse, **obrigatório** para conexão com job cluster/DW).
+> Por padrão o dbt reconhece o nome dos schemas através dos arquivos .sql da pasta **models** (rdefinir aqui reescreve os demais), em **db_project.yml** e **profiles.yml** (sendo esse, **obrigatório** para conexão com job cluster/DW).</br>
 <u><b>Exemplo</b>: https://github.com/gusantos1/dbw_dbt/blob/main/main/dbt_project.yml</u>
 
 1- Em models através do placeholder `{{config (schema='nome_do_schema')}}`
@@ -145,8 +145,8 @@ outputs:
 ```
 
 3- Criando o arquivo **generate_schema_name.sql**
-> Por padrão o dbt concatena os nomes dos schemas com o que foi definido inicialmente no arquivo **profiles.yml**, é necessário reescrever a função para alterar esse comportamento. 
-<u><b>Documentado</b>: https://docs.getdbt.com/docs/build/custom-schemas</u>
+> Por padrão o dbt concatena os nomes dos schemas com o que foi definido inicialmente no arquivo **profiles.yml**, é necessário reescrever a função para alterar esse comportamento.</br> 
+<u><b>Documentado</b>: https://docs.getdbt.com/docs/build/custom-schemas</u></br>
 <u><b>Exemplo</b>: https://github.com/gusantos1/dbw_dbt/blob/main/main/macros/generate_schema_name.sql</u>
 
 **/macros/generate_schema_name.sql**:
