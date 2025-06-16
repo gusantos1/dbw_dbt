@@ -1,7 +1,11 @@
 # Integração DBT e Databricks
-Data Build Tool é um framework de processamento de dados baseado em ANSI SQL com funcionalidades pra superset de SQL, exemplo, Jinja template e qualidade de dados com aplicabilidade de testes em tempo de execução,linhagem de dados e documentação servida com webview.
-O dbt não é ferramenta para copia ou orquestração de dados como Airflow ou Data Factory.
-O dbt não é serviço de processamento, pelo contrário, o dbt se utiliza de um serviço de processamento para motor das transformações, com Databricks, o dbt pode utilizar um SQL Warehouse como poder de processamento para seus trabalhos.
+O dbt (Data Build Tool) é um framework de transformação de dados que utiliza **ANSI SQL** como linguagem principal e estende suas capacidades com recursos como **templates Jinja**, **testes de qualidade de dados em tempo de execução**, **linhagem de dados** e **documentação interativa via Web UI**.
+
+Diferente de ferramentas como **Airflow** ou **Azure Data Factory**, o dbt **não realiza cópia nem orquestração de dados**. Ele também ** não é uma engine de processamento**, mas sim uma camada de transformação que **depende de um motor de processamento** para seus modelos.
+
+Por exemplo, ao integrar o dbt com o Databricks, é possível utilizar um SQL Warehouse como engine de processamento para as transformações definidas no projeto dbt.
+
+Utilize uma plataforma de dados como o Databricks para federar dados diretamente das fontes ou implemente processos de ingestão e materialize os dados necessário.
 
 <img src="https://github.com/gusantos1/dbw_dbt/blob/main/workflow-dbt.png">
 
@@ -184,6 +188,27 @@ outputs:
 ├── tests
 ```
 ---
+#### 10. Dinâmica de desenvolvimento
+
+> A partir dos dados federados ou copiados para o ambiente Databricks, você pode desenvolver localmente no VS Code usando o plugin DBT Power User. Ele permite visualizar as compilações das queries escritas com Jinja, que serão interpretadas pelo data warehouse, além de acompanhar os resultados das execuções.
+Se estiver usando Poetry no ambiente de desenvolvimento, certifique-se de selecionar o interpretador correto do ambiente virtual. Caso enfrente erros — como problemas para localizar o profiles.yml — use a função de diagnóstico do plugin para ajudar na resolução.
+
+1. Localize o interpretador do seu ambiente virtual Poetry
+    \>>> poetry env info 
+    ```bash
+    Virtualenv
+    Python:         3.13.3
+    Implementation: CPython
+    Path:           /home/host01/.cache/pypoetry/virtualenvs/dbt-sbnNWL-D-py3.13
+    Executable:     /home/host01/.cache/pypoetry/virtualenvs/dbt-sbnNWL-D-py3.13/bin/python #Interpretador
+    Valid:          True
+    ```
+2. No vscode use `CTRL+SHIFT+P: Python Select Interpreter` e cole o caminho em **Executable**
+3. Após o interpretador ser reconhecido, espera-se que o plugin identifique automaticamente o dbt-core instalado no ambiente virtual
+
+
+---
+
 #### 12. Servindo a documentação com Azure Static Web Apps
 > Durante a implementação o GH Actions cria um fluxo de CI/CD para atualização dos dados estáticos a cada push na branch do projeto.
 <u><b>CI/CD gerado</b></u>: https://github.com/gusantos1/dbw_dbt/blob/main/.github/workflows/azure-static-web-apps-gentle-pebble-0b9f95b10.yml
@@ -195,6 +220,3 @@ outputs:
 
 ---
 #### Comandos essenciais
-#### 10. Dinâmica de desenvolvimento
-A partir dos dados federados ou copiados para ambiente Databricks, você irá desenvolver as consultas direto pelo DW para melhorar visualização e saídas, plugin vscode
-dbt docs generate para enxergar a compilação da sintaxe

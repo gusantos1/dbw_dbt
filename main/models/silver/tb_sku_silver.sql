@@ -1,11 +1,11 @@
-{% set columns = ['sku', 'valor', 'tipo'] %}
+{% set columns = ['valor', 'tipo'] %}
 
 with source_data as (
     select
         DISTINCT
         sku,
         valor,
-        coalesce(replace(TIPO, '-'), '') tipo,
+        tipo,
         ingestion_timestamp
     from {{ ref('tb_sku_bronze') }}
 
