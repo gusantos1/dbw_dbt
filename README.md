@@ -205,11 +205,15 @@ Se estiver usando Poetry no ambiente de desenvolvimento, certifique-se de seleci
     ```
 2. No vscode use `CTRL+SHIFT+P: Python Select Interpreter` e cole o caminho em **Executable**
 3. Após o interpretador ser reconhecido, espera-se que o plugin identifique automaticamente o dbt-core instalado no ambiente virtual
-
+    <img src="https://github.com/gusantos1/dbw_dbt/blob/main/dbt-core-reconhecido.png">
+4. Utilize a função `Diagnostics` do plugin para identificar erros de building do projeto
+    <img src="https://github.com/gusantos1/dbw_dbt/blob/main/dbt-diagnostico.png">
+5. Exemplo de diagnóstico onde o plugin não conseguiu identificr o arquivo profiles.yml
+    <img src="https://github.com/gusantos1/dbw_dbt/blob/main/dbt-erro-profiles.png">
 
 ---
 
-#### 12. Servindo a documentação com Azure Static Web Apps
+#### 11. Servindo a documentação com Azure Static Web Apps
 > Durante a implementação o GH Actions cria um fluxo de CI/CD para atualização dos dados estáticos a cada push na branch do projeto.
 <u><b>CI/CD gerado</b></u>: https://github.com/gusantos1/dbw_dbt/blob/main/.github/workflows/azure-static-web-apps-gentle-pebble-0b9f95b10.yml
 <u><b>Deploy da documentação</b></u>: https://gentle-pebble-0b9f95b10.6.azurestaticapps.net/#!/overview
@@ -219,4 +223,67 @@ Se estiver usando Poetry no ambiente de desenvolvimento, certifique-se de seleci
 - Local de saída: `.`
 
 ---
-#### Comandos essenciais
+#### 12. Comandos essenciais
+
+#### Poetry
+
+- **`poetry install`**  
+  Instala todas as dependências listadas no `pyproject.toml`.
+
+- **`poetry add <pacote>`**  
+  Adiciona uma nova dependência ao projeto.
+
+- **`poetry add --group dev <pacote>`**  
+  Adiciona uma dependência ao grupo de desenvolvimento (ex: linters, dbt, etc).
+
+- **`poetry remove <pacote>`**  
+  Remove uma dependência do projeto.
+
+- **`poetry update`**  
+  Atualiza todas as dependências para a versão mais recente permitida.
+
+- **`poetry run <comando>`**  
+  Executa um comando dentro do ambiente virtual gerenciado pelo Poetry. Ex: `poetry run dbt run`
+
+- **`poetry shell`**  
+  Abre um shell com o ambiente virtual do projeto ativado.
+
+- **`poetry env info`**  
+  Exibe informações sobre o ambiente virtual atual.
+
+- **`poetry export -f requirements.txt --without-hashes > requirements.txt`**  
+  Gera um arquivo `requirements.txt` (útil para ambientes que não usam Poetry diretamente).
+
+- **`poetry lock`**  
+  Recria o arquivo `poetry.lock` com base nas versões resolvidas.
+
+#### Tasks
+- **`task deps`**  
+  Instala as dependências do projeto (`packages.yml`).
+
+- **`task clean`**  
+  Limpa artefatos (`target/`, `dbt_packages/`) e compila os modelos.
+
+- **`task build`**  
+  Executa `run`, `test`, `snapshot` e `seed` — constrói e valida o pipeline completo.
+
+- **`task run`**  
+  Executa os modelos dbt (transformações SQL no warehouse).
+
+- **`task test`**  
+  Roda os testes declarativos e customizados do projeto.
+
+- **`task seed`**  
+  Carrega arquivos `.csv` da pasta `seeds/` como tabelas no banco.
+
+- **`task snapshot`**  
+  Gera snapshots (versionamento de dados ao longo do tempo).
+
+- **`task pre_doc`**  
+  Gera a documentação estática dos modelos dbt.
+
+- **`task doc`**  
+  Abre um servidor local da documentação (`http://localhost:8080`).
+
+- **`task pre_build`**  
+  Executa `pre_doc` antes do `build`, garantindo que a doc esteja atualizada.
