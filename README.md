@@ -1,7 +1,7 @@
 # Integração DBT e Databricks
 O dbt (Data Build Tool) é um framework de transformação de dados que utiliza **ANSI SQL** como linguagem principal e estende suas capacidades com recursos como **templates Jinja**, **testes de qualidade de dados em tempo de execução**, **linhagem de dados** e **documentação interativa via Web UI**.
 
-Diferente de ferramentas como **Airflow** ou **Azure Data Factory**, o dbt **não realiza cópia nem orquestração de dados**. Ele também ** não é uma engine de processamento**, mas sim uma camada de transformação que **depende de um motor de processamento** para seus modelos.
+Diferente de ferramentas como **Airflow** ou **Azure Data Factory**, o dbt **não realiza cópia nem orquestração de dados**. Ele também **não é uma engine de processamento**, mas sim uma camada de transformação que **depende de um motor de processamento** para seus modelos.
 
 Por exemplo, ao integrar o dbt com o Databricks, é possível utilizar um SQL Warehouse como engine de processamento para as transformações definidas no projeto dbt.
 
