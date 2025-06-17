@@ -212,6 +212,8 @@ Se estiver usando Poetry no ambiente de desenvolvimento, certifique-se de seleci
     <img src="https://github.com/gusantos1/dbw_dbt/blob/main/dbt-erro-profiles.png">
 6. Exemplo de resultados com plugin Power User Dbt no vscode
     <img src="https://github.com/gusantos1/dbw_dbt/blob/main/dbt-poweruser-debug.png">
+7. Exemplo de workflow no Databricks
+    <img src="https://github.com/gusantos1/dbw_dbt/blob/main/workflow-databricks-dbt.png">
 ---
 
 #### 11. Servindo a documentação com Azure Static Web Apps
