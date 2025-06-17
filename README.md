@@ -205,14 +205,15 @@ Se estiver usando Poetry no ambiente de desenvolvimento, certifique-se de seleci
     ```
 2. No vscode use `CTRL+SHIFT+P: Python Select Interpreter` e cole o caminho em **Executable**
 3. Após o interpretador ser reconhecido, espera-se que o plugin identifique automaticamente o dbt-core instalado no ambiente virtual
+   </br>
     <img src="https://github.com/gusantos1/dbw_dbt/blob/main/dbt-core-reconhecido.png">
-4. Utilize a função `Diagnostics` do plugin para identificar erros de building do projeto
+5. Utilize a função `Diagnostics` do plugin para identificar erros de building do projeto
     <img src="https://github.com/gusantos1/dbw_dbt/blob/main/dbt-diagnostico.png">
-5. Exemplo de diagnóstico onde o plugin não conseguiu identificr o arquivo profiles.yml
+6. Exemplo de diagnóstico onde o plugin não conseguiu identificr o arquivo profiles.yml
     <img src="https://github.com/gusantos1/dbw_dbt/blob/main/dbt-erro-profiles.png">
-6. Exemplo de resultados com plugin Power User Dbt no vscode
+7. Exemplo de resultados com plugin Power User Dbt no vscode
     <img src="https://github.com/gusantos1/dbw_dbt/blob/main/dbt-poweruser-debug.png">
-7. Exemplo de workflow no Databricks
+8. Exemplo de workflow no Databricks
     <img src="https://github.com/gusantos1/dbw_dbt/blob/main/workflow-databricks-dbt.png">
 ---
 
