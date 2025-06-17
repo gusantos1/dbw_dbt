@@ -126,8 +126,8 @@ outputs:
     
 ```
 - **Opções**:
-    **1ª Pelo terminal**: `dbt run --profiles-dir .`
-    **2ª Por variável de ambiente**: `export DBT_PROFILES_DIR=$(pwd)`
+    - **1ª Pelo terminal**: `dbt run --profiles-dir .`
+    - **2ª Por variável de ambiente**: `export DBT_PROFILES_DIR=$(pwd)`
 
 ---
 #### 8. Arquivo para não concatenar o nome dos schemas
