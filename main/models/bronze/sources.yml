@@ -3,9 +3,35 @@ version: 2
 sources:
   - name: neon_federation_dbw
     description: Fonte de dados do Neon serveless Federado no Databricks
+    tags:
+      - neon
+      - federation
+      - source
+      - postgres
     catalog: psql_neon
     schema: raw
     tables:
       - name: tb_sku
         description: Tabela de SKUs
-        identifier: tb_sku
+        identifier: tb_sku #Nome da tabela no databricks
+        columns:
+          - name: SKU
+            description: Nome do sku na origem
+
+          - name: VALOR
+            description: Valor bruto do sku na origem
+            tests:
+              - not_null:
+                  severity: warn
+
+          - name: TIPO
+            description: Tipo do sku na origem
+            tests:
+              - dbt_expectations.expect_column_values_to_match_regex:
+                  severity: warn
+                  regex: "^[A-Za-z]{1}$" # Aceita apenas uma letra entre A e Z
+                  is_raw: true  # interpreta o regex como string bruta
+                  flags: i      # opcional: flags=1 torna o regex case-insensitive
+          
+          - name: uuid
+            description: UUID para rastreio do sku na origem

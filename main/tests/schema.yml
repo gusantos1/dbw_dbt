@@ -1,0 +1,8 @@
+version: 2
+data_tests:
+  - name: assert_campaign_not_exists
+    description: "Valida se campanhas futuras já possuem valor."
+    config:
+      severity: warn
+    
+      

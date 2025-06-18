@@ -12,8 +12,6 @@
     
       ingestion_timestamp timestamp,
     
-      sku_has_null int,
-    
       valor_has_null int,
     
       tipo_has_null int

@@ -4,16 +4,17 @@ models:
   - name: tb_sku_gold
     description: "The gold model"
     columns:
-      - name: SKU_COD
+      - name: sku
         description: "Código do sku"
-        # tests:
-        #   - not_null
 
-      - name: SKU_NAME
-        description: "Nome do sku"
+      - name: nome_campanha
+        description: "Nome da campanha"  
 
-      - name: VALOR
+      - name: data_campanha
+        description: "Data da campanha"
+
+      - name: valor
         description: "Valor bruto do sku"
       
-      - name: TIPO
+      - name: tipo
         description: "Tipo do sku"

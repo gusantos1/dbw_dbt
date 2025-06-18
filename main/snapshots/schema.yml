@@ -1,0 +1,36 @@
+version: 2
+
+snapshots:
+  - name: tb_sku_snapshot
+    description: >
+      Snapshot da tabela SKU usado para registrar mudanças nas colunas 'valor' e 'tipo',
+      utilizando 'check'.
+
+    columns:
+      - name: sku
+        description: "Identificador único do produto."
+        data_type: string
+
+      - name: valor
+        description: "Preço ou valor numérico associado ao SKU."
+        data_type: decimal(10,2)
+
+      - name: tipo
+        description: "Categoria ou tipo associado ao SKU."
+        data_type: string
+
+      - name: dbt_scd_id
+        description: "Identificador único gerado pelo dbt para controle de versões."
+        data_type: string
+
+      - name: dbt_updated_at
+        description: "Timestamp da última atualização registrada no snapshot."
+        data_type: timestamp
+
+      - name: dbt_valid_from
+        description: "Data e hora em que o registro passou a ser válido."
+        data_type: timestamp
+
+      - name: dbt_valid_to
+        description: "Data e hora em que o registro deixou de ser válido (se aplicável)."
+        data_type: timestamp

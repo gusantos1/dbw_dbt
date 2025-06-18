@@ -6,14 +6,19 @@ models:
     columns:
       - name: SKU
         tests:
-          - not_null
+          - not_null:
+              severity: error
+          - unique:
+              severity: error
 
       - name: VALOR
         tests:
-          - test_less_than: # Macro para verificar se o valor é menor que 10
+          - test_greater_than: # Verifica se o valor é maior que 10
               value: 10
+              severity: error
 
       - name: TIPO
         tests:
           - dbt_utils.not_accepted_values:
               values: ['-', 'N/A', 'null']
+              severity: warn
