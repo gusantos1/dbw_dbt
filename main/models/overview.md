@@ -5,7 +5,7 @@ https://docs.getdbt.com/docs/build/documentation#setting-a-custom-overview
 
 {% docs __overview__ %}
 
-##### Documentação customizada em: [/models/overview.md](http://localhost:8080/#!/overview/main)
+##### Documentação customizada em: [/models/overview.md](https://github.com/gusantos1/dbw_dbt/blob/main/main/models/overview.md)
 
 # Visão Geral do Projeto
 
